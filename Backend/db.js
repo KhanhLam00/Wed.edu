@@ -1,23 +1,27 @@
 const mysql = require('mysql2/promise');
 
+// Cách kết nối cực kỳ bền bỉ (Robust connection)
 const pool = mysql.createPool({
-  host: process.env.DB_HOST || 'localhost',
-  user: process.env.DB_USER || 'root',
-  password: process.env.DB_PASSWORD || '',
-  database: process.env.DB_NAME || 'smart_math',
-  port: process.env.DB_PORT || 3306,
+  uri: process.env.DATABASE_URL, // Thử dùng link trước
+  // Nếu link không chạy, các dòng dưới đây sẽ "cứu cánh"
+  host: process.env.MYSQLHOST || 'shinkansen.proxy.rlwy.net',
+  user: process.env.MYSQLUSER || 'root',
+  password: process.env.MYSQLPASSWORD || 'auNNIaIQLWwXuwQWaPCKRcCiYIcCXhuC',
+  database: process.env.MYSQLDATABASE || 'railway',
+  port: process.env.MYSQLPORT || 51782,
   waitForConnections: true,
   connectionLimit: 10,
-  queueLimit: 0,
+  queueLimit: 0
 });
 
 pool.getConnection()
   .then(conn => {
-    console.log('✅ Kết nối Database thành công!');
+    console.log('✅ KẾT NỐI DATABASE THÀNH CÔNG!');
     conn.release();
   })
   .catch(err => {
-    console.error('❌ Lỗi kết nối Database:', err.message);
+    console.error('❌ LỖI MYSQL THẬT SỰ ĐÂY RỒI:', err.code);
+    console.error('❌ TIN NHẮN LỖI:', err.message);
   });
 
 module.exports = pool;
