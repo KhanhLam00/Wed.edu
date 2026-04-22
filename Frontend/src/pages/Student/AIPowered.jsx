@@ -81,7 +81,7 @@ export default function AIPowered() {
     const base64 = await convertToBase64(selectedImage);
     const token = localStorage.getItem('token');
 
-    const response = await fetch('http://localhost:5000/api/ai/solve-from-image', {
+    const response = await fetch('https://wed-edu.onrender.com/api/ai/solve-from-image', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
