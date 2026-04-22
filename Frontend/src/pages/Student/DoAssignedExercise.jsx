@@ -21,7 +21,7 @@ export default function DoAssignedExercise() {
       try {
         const token = localStorage.getItem('token'); // FIX: lấy token
 
-        const response = await fetch(`http://localhost:5000/api/student/exercise-detail/${id}`, {
+        const response = await fetch(`https://wed-edu.onrender.com/api/student/exercise-detail/${id}`, {
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}` // FIX: gửi token
@@ -62,7 +62,7 @@ export default function DoAssignedExercise() {
 
       const token = localStorage.getItem('token'); // FIX: lấy token
 
-      const response = await fetch('http://localhost:5000/api/student/submit-exercise', {
+      const response = await fetch('https://wed-edu.onrender.com/api/student/submit-exercise', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
