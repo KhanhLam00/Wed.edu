@@ -165,7 +165,7 @@ function LoginForm() {
     };
 
     try {
-      const response = await fetch('https://wed-edu.onrender.com/api/register', {
+      const response = await fetch('https://wed-edu.onrender.com/api/google-login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(finalUserData),
@@ -199,7 +199,7 @@ function LoginForm() {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://wed-edu.onrender.com/api/register', {
+      const response = await fetch('https://wed-edu.onrender.com/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
