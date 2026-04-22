@@ -17,19 +17,19 @@ export default function TeacherExerciseSubmissions() {
 const token = localStorage.getItem('token');
 
       const [exerciseRes, submissionsRes, summaryRes] = await Promise.all([
-        fetch(`http://localhost:5000/api/teacher/exercises/${id}`, {
+        fetch(`https://wed-edu.onrender.com/api/teacher/exercises/${id}`, {
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`
           }
         }),
-        fetch(`http://localhost:5000/api/teacher/exercises/${id}/submissions`, {
+        fetch(`https://wed-edu.onrender.com/api/teacher/exercises/${id}/submissions`, {
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`
           }
         }),
-        fetch(`http://localhost:5000/api/teacher/exercises/${id}/submission-summary`, {
+        fetch(`https://wed-edu.onrender.com/api/teacher/exercises/${id}/submission-summary`, {
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`
