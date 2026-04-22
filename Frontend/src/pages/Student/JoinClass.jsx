@@ -24,7 +24,7 @@ export default function JoinClass() {
     try {
       setLoading(true);
 
-      const response = await fetch('http://localhost:5000/api/student/join-class', {
+      const response = await fetch('https://wed-edu.onrender.com/api/student/join-class', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
