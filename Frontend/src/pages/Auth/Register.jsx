@@ -101,7 +101,7 @@ export default function Register() {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/register', {
+      const response = await fetch('https://wed-edu.onrender.com/api/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...formData, role: selectedRole })
@@ -123,7 +123,7 @@ export default function Register() {
       }
     } catch (error) {
       console.error(error);
-      showToast('Chưa bật Backend rồi! Nhớ chạy server ở cổng 5000 nhé.');
+      showToast('Có lỗi kết nối với máy chủ, vui lòng thử lại sau!');
     } finally {
       setLoading(false);
     }
