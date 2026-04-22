@@ -78,7 +78,7 @@ export default function MathPlus() {
         return;
       }
 
-      const response = await fetch('http://localhost:5000/api/results/save', {
+      const response = await fetch('https://wed-edu.onrender.com/api/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -180,7 +180,7 @@ export default function MathPlus() {
     setQuestionText(`🤖 Milu đang tạo bài "${currentLesson.label}" cho bé...`);
 
     try {
-      const response = await fetch('http://localhost:5000/api/ai/generate-math', {
+      const response = await fetch('https://wed-edu.onrender.com/api/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -243,7 +243,7 @@ export default function MathPlus() {
         setIsAiLoading(false);
       } else {
         try {
-          const response = await fetch('http://localhost:5000/api/ai/explain', {
+          const response = await fetch('https://wed-edu.onrender.com/api/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
