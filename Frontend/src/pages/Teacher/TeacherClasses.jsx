@@ -25,7 +25,7 @@ export default function TeacherClasses() {
     setLoadingClasses(true);
     const token = localStorage.getItem('token');
 
-    const response = await fetch(`http://localhost:5000/api/teacher/classes`, {
+    const response = await fetch(`https://wed-edu.onrender.com/api/teacher/classes`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -59,12 +59,12 @@ export default function TeacherClasses() {
 const token = localStorage.getItem('token');
 
       const [detailRes, summaryRes] = await Promise.all([
-        fetch(`http://localhost:5000/api/teacher/classes/${classId}/detail`, {
+        fetch(`https://wed-edu.onrender.com/api/teacher/classes/${classId}/detail`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
         }),
-        fetch(`http://localhost:5000/api/teacher/classes/${classId}/submission-summary`, {
+        fetch(`https://wed-edu.onrender.com/api/teacher/classes/${classId}/submission-summary`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -154,7 +154,7 @@ const handleDeleteClass = async (classId, className) => {
   try {
     const token = localStorage.getItem('token');
 
-    const res = await fetch(`http://localhost:5000/api/teacher/classes/${classId}`, {
+    const res = await fetch(`https://wed-edu.onrender.com/api/teacher/classes/${classId}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${token}`
