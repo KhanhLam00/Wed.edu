@@ -21,7 +21,7 @@ export default function AssignedExercises() {
       const token = localStorage.getItem('token');
 
       const response = await fetch(
-        `http://localhost:5000/api/student/classroom-exercises/${classroomId}`,
+        `https://wed-edu.onrender.com/api/student/classroom-exercises/${classroomId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`
