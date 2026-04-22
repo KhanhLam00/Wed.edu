@@ -25,7 +25,7 @@ export default function ClassRoom() {
       try {
         setLoading(true);
 
-        const classRes = await fetch(`http://localhost:5000/api/classrooms/${classroomId}`);
+        const classRes = await fetch(`https://wed-edu.onrender.com/api/classrooms/${classroomId}`);
         const classData = await classRes.json();
 
         if (classRes.ok) {
@@ -52,7 +52,7 @@ export default function ClassRoom() {
           setTeacher(null);
         }
 
-        const membersRes = await fetch(`http://localhost:5000/api/classrooms/${classroomId}/members`);
+        const membersRes = await fetch(`https://wed-edu.onrender.com/api/classrooms/${classroomId}/members`);
         const membersData = await membersRes.json();
 
         if (membersRes.ok && Array.isArray(membersData)) {
