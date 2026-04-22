@@ -18,7 +18,7 @@ export default function TeacherDashboard() {
       try {
         const token = localStorage.getItem('token');
 
-        const response = await fetch('http://localhost:5000/api/teacher/dashboard-summary', {
+        const response = await fetch('https://wed-edu.onrender.com/api/teacher/dashboard-summary', {
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`
