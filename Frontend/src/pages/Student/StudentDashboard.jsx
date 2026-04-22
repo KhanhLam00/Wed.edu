@@ -37,7 +37,7 @@ export default function StudentDashboard() {
     setLoadingLessons(true);
 
     const token = localStorage.getItem('token');
-      fetch(`http://localhost:5000/api/lessons?gradeLevel=${currentGradeLevel}`, {
+      fetch(`https://wed-edu.onrender.com/api/lessons?gradeLevel=${currentGradeLevel}`, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`
@@ -52,7 +52,7 @@ export default function StudentDashboard() {
       })
       .finally(() => setLoadingLessons(false));
 
-    fetch('http://localhost:5000/api/leaderboard')
+    fetch('https://wed-edu.onrender.com/api/leaderboard')
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data)) {
@@ -67,7 +67,7 @@ export default function StudentDashboard() {
       });
 
     if (userId) {
-      fetch(`http://localhost:5000/api/results/student/${userId}`, {
+      fetch(`https://wed-edu.onrender.com/api/results/student/${userId}`, {
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`
