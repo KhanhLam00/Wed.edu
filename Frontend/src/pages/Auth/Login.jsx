@@ -165,7 +165,7 @@ function LoginForm() {
     };
 
     try {
-      const response = await fetch('http://localhost:5000/api/google-login', {
+      const response = await fetch('https://wed-edu.onrender.com/api/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(finalUserData),
@@ -188,7 +188,7 @@ function LoginForm() {
       }
     } catch (error) {
       console.error(error);
-     showToast('Lỗi kết nối Server! Hãy kiểm tra backend cổng 5000 nhé.');
+     showToast('Có lỗi kết nối với máy chủ, vui lòng thử lại sau!');
     }
   };
 
@@ -199,7 +199,7 @@ function LoginForm() {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/api/login', {
+      const response = await fetch('https://wed-edu.onrender.com/api/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
