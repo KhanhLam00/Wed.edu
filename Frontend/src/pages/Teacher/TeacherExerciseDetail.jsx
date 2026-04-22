@@ -16,7 +16,7 @@ export default function TeacherExerciseDetail() {
       try {
         const token = localStorage.getItem('token');
 
-        const response = await fetch(`http://localhost:5000/api/teacher/exercises/${id}`, {
+        const response = await fetch(`https://wed-edu.onrender.com/api/teacher/exercises/${id}`, {
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`
