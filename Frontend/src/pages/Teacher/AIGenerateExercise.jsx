@@ -24,7 +24,7 @@ export default function AIGenerateExercise() {
 
     const token = localStorage.getItem('token');
 
-    fetch('http://localhost:5000/api/teacher/classes', {
+    fetch('https://wed-edu.onrender.com/api/teacher/classes', {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -83,7 +83,7 @@ export default function AIGenerateExercise() {
 
       const token = localStorage.getItem('token');
 
-      const response = await fetch('http://localhost:5000/api/teacher/generate-exercise', {
+      const response = await fetch('https://wed-edu.onrender.com/api/teacher/generate-exercise', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -127,7 +127,7 @@ export default function AIGenerateExercise() {
       setSaving(true);
       const token = localStorage.getItem('token');
 
-      const response = await fetch('http://localhost:5000/api/teacher/save-exercise', {
+      const response = await fetch('https://wed-edu.onrender.com/api/teacher/save-exercise', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
